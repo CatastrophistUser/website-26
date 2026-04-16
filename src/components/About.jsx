@@ -69,8 +69,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="font-display font-bold text-[40px] text-primary leading-[1.15] tracking-[-1px]"
           >
-            "I believe in design that confronts — not comforts. Every interface should
-            demand attention, then reward it."
+            "Placeholder quote box"
           </motion.blockquote>
 
           <motion.p
