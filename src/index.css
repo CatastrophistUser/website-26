@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* ============================================
+   DESIGN TOKENS — Brutalist × Glassmorphism
+   ============================================ */
+
+@theme {
+  /* Colors - Dark Void Palette */
+  --color-void: #0A0A0A;
+  --color-surface: #111111;
+  --color-elevated: #1A1A1A;
+  --color-primary: #F5F0E8;
+  --color-secondary: #8A8278;
+  --color-muted: #4A4540;
+  --color-accent-glow: #FF6B35;
+  --color-accent-electric: #C4F82A;
+  --color-glass-border: rgba(245, 240, 232, 0.08);
+  --color-glass-fill: rgba(26, 26, 26, 0.6);
+  --color-glass-heavy: rgba(26, 26, 26, 0.85);
+
+  /* Typography */
+  --font-display: "Syne", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-ui: "Inter", sans-serif;
+  --page-gutter: clamp(20px, 3vw, 48px);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--color-void);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  overflow-x: clip;
+}
+
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+.page-shell {
+  width: min(100%, calc(1440px + (var(--page-gutter) * 2)));
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+::selection {
+  background: var(--color-accent-glow);
+  color: var(--color-void);
+}
+
+/* ============================================
+   GLASSMORPHISM UTILITIES
+   ============================================ */
+
+.glass {
+  background: var(--color-glass-fill);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-glass-border);
+}
+
+.glass-heavy {
+  background: var(--color-glass-heavy);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(245, 240, 232, 0.12);
+}
+
+/* ============================================
+   BRUTALIST UTILITIES
+   ============================================ */
+
+.brutal-border {
+  border: 3px solid var(--color-primary);
+}
+
+.brutal-shadow {
+  box-shadow: 8px 8px 0px var(--color-primary);
+}
+
+.brutal-shadow-accent {
+  box-shadow: 8px 8px 0px var(--color-accent-glow);
+}
+
+/* ============================================
+   GRAIN OVERLAY
+   ============================================ */
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ============================================
+   GLOW ANIMATIONS
+   ============================================ */
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 40px rgba(255, 107, 53, 0.3),
+      0 0 80px rgba(255, 107, 53, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 60px rgba(255, 107, 53, 0.5),
+      0 0 120px rgba(255, 107, 53, 0.25);
+  }
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-subtle {
+  animation: subtleFloat 6s ease-in-out infinite;
+}
+
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+
+.magnetic-cursor {
+  width: 20px;
+  height: 20px;
+  background: var(--color-accent-glow);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transition: width 0.3s, height 0.3s;
+}
+
+.magnetic-cursor.expanded {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 107, 53, 0.3);
+  border: 2px solid var(--color-accent-glow);
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
