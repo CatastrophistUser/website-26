@@ -179,6 +179,17 @@ body,
   border: 2px solid var(--color-accent-glow);
 }
 
+/* `cursor-none` on <main> only covers plain hover — any descendant with its own
+   `cursor-pointer` (buttons, cards, nav links) overrides it, so the native arrow
+   reappeared on exactly the elements that trigger the custom cursor's hover state.
+   Force cursor:none on every [data-magnetic] element, but only at the md breakpoint
+   and up, matching CustomCursor's `hidden md:block` (no custom cursor on touch). */
+@media (min-width: 768px) {
+  [data-magnetic] {
+    cursor: none;
+  }
+}
+
 /* ============================================
    SCROLLBAR
    ============================================ */
