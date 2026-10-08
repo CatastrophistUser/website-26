@@ -1,0 +1,27 @@
+# PM.
+
+> Personal design/dev portfolio for Pranjal ("PM."). Brutalist × glassmorphism visual identity. Single-page site: hero, skills & frameworks, selected works, about/manifesto, contact.
+
+PM. designs and builds digital products — UI design, design systems, and front-end implementation (React, Tailwind CSS, Framer Motion). This file is a machine-readable summary for AI agents and LLMs, per the llms.txt convention (https://llmstxt.org). A human-readable version of the same information is at /agents.
+
+## Site
+
+- [Home](/): Hero, Skills & Frameworks, Selected Works, About/Manifesto, Contact.
+- [Agents page](/agents): Human-readable version of this file, for AI agents/crawlers and curious visitors.
+
+## Skills & frameworks
+
+See the "Skills & Frameworks" section on the home page for the current list (languages, frameworks, tooling, design). Content there is the source of truth; do not assume this file is kept in sync with it.
+
+## Selected works
+
+See the "Selected Works" section on the home page. As of this writing it includes Streamera (streaming platform UI) and RSSible (RSS platform), plus placeholder entries for upcoming projects.
+
+## Contact
+
+Social links (Github, LinkedIn, Behance) are in the site footer and the Contact overlay. This file intentionally omits specific handles/emails to avoid them going stale — read the live page.
+
+## Notes for crawlers
+
+- This is a client-rendered single-page app (Vite + React). Content is not present in the initial HTML response; render JavaScript to read section content, or rely on this file and /agents for a summary.
+- robots.txt allows crawling of the whole site.

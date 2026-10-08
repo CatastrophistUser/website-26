@@ -1,0 +1,10 @@
+# PM. — portfolio site
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml
+
+# Machine-readable site summary for AI agents / LLMs (https://llmstxt.org)
+# https://example.com/llms.txt

@@ -21,7 +21,7 @@ function ProjectCard({ project }) {
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
       data-magnetic
-      className={`cursor-pointer transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(255,107,53,0.15)]
+      className={`cursor-pointer transition-shadow duration-500 hover:shadow-[0_0_40px_rgb(var(--accent-rgb)/0.15)]
         ${project.brutal ? 'brutal-border' : 'glass'}
         ${isFeatured ? 'col-span-2' : ''}
       `}
@@ -32,11 +32,13 @@ function ProjectCard({ project }) {
             }`}
           style={{ background: project.gradient }}
         >
-          <img
-            src={project.image}
-            alt={project.title}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+          {project.image && (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          )}
           <span
             className="font-display font-extrabold absolute top-5 left-6 leading-none"
             style={{

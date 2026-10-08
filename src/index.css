@@ -14,6 +14,7 @@
   --color-muted: #4A4540;
   --color-accent-glow: #FF6B35;
   --color-accent-electric: #C4F82A;
+  --color-accent-soft: color-mix(in srgb, var(--color-accent-glow) 55%, white);
   --color-glass-border: rgba(245, 240, 232, 0.08);
   --color-glass-fill: rgba(26, 26, 26, 0.6);
   --color-glass-heavy: rgba(26, 26, 26, 0.85);
@@ -29,6 +30,12 @@
 /* ============================================
    BASE STYLES
    ============================================ */
+
+/* Space-separated rgb of --color-accent-glow, for rgb(var(--accent-rgb) / a)
+   (translucent glows/shadows). Keep in sync with --color-accent-glow above. */
+:root {
+  --accent-rgb: 255 107 53;
+}
 
 *,
 *::before,
@@ -126,13 +133,13 @@ body,
 @keyframes glowPulse {
   0%, 100% {
     box-shadow:
-      0 0 40px rgba(255, 107, 53, 0.3),
-      0 0 80px rgba(255, 107, 53, 0.15);
+      0 0 40px rgb(var(--accent-rgb) / 0.3),
+      0 0 80px rgb(var(--accent-rgb) / 0.15);
   }
   50% {
     box-shadow:
-      0 0 60px rgba(255, 107, 53, 0.5),
-      0 0 120px rgba(255, 107, 53, 0.25);
+      0 0 60px rgb(var(--accent-rgb) / 0.5),
+      0 0 120px rgb(var(--accent-rgb) / 0.25);
   }
 }
 
@@ -168,7 +175,7 @@ body,
 .magnetic-cursor.expanded {
   width: 60px;
   height: 60px;
-  background: rgba(255, 107, 53, 0.3);
+  background: rgb(var(--accent-rgb) / 0.3);
   border: 2px solid var(--color-accent-glow);
 }
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const navLinks = ['Works', 'About'];
+const navLinks = ['Skills', 'Works', 'About'];
 
 export default function Navbar({ onContactClick }) {
   return (
@@ -11,7 +11,10 @@ export default function Navbar({ onContactClick }) {
       className="fixed top-0 left-0 w-full z-50 glass"
       style={{ borderBottom: '3px solid #F5F0E8' }}
     >
-      <div className="page-shell flex w-full items-center justify-between gap-6 py-5">
+      <div
+        className="page-shell flex w-full items-center justify-between gap-6"
+        style={{ paddingBlock: '10px' }}
+      >
         <span className="font-display font-extrabold text-[28px] text-primary tracking-tight">
           PM.
         </span>
@@ -35,10 +38,11 @@ export default function Navbar({ onContactClick }) {
             data-magnetic
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center justify-center rounded-[0px] border border-[#ffb08f]
-                       px-14 py-6 bg-accent-glow font-ui font-semibold text-[14px] text-void
-                       tracking-[2px] uppercase cursor-pointer shadow-[0_10px_28px_rgba(255,107,53,0.22)]
-                       hover:shadow-[0_0_30px_rgba(255,107,53,0.4)] transition-shadow duration-300"
+            style={{ padding: '11px 34px 11px 36px' }}
+            className="inline-flex items-center justify-center rounded-[0px] border border-accent-soft
+                       bg-accent-glow font-ui font-semibold text-[13px] text-void
+                       tracking-[2px] uppercase cursor-pointer shadow-[0_10px_28px_rgb(var(--accent-rgb)/0.22)]
+                       hover:shadow-[0_0_30px_rgb(var(--accent-rgb)/0.4)] transition-shadow duration-300"
           >
             Contact
           </motion.button>
