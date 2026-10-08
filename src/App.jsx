@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Skills from './components/Skills';
 import Works from './components/Works';
 import About from './components/About';
 import CTA from './components/CTA';
@@ -51,6 +52,7 @@ export default function App() {
       <Navbar onContactClick={() => openContact('nav')} />
       <main className="w-full cursor-none overflow-x-clip md:cursor-none">
         <Hero />
+        <Skills />
         <Works />
         <About />
         <CTA onContactClick={() => openContact('cta')} />

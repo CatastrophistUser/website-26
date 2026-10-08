@@ -62,9 +62,10 @@ export default function CTA({ onContactClick }) {
           data-magnetic
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="relative inline-flex min-h-[60px] items-center justify-center rounded-[4px] border border-[#ffb08f]
-                     pl-24 pr-18 py-0 bg-accent-glow font-display font-extrabold text-[14px] text-center text-void
-                     tracking-[10px] uppercase cursor-pointer glow-pulse shadow-[0_14px_40px_rgba(255,107,53,0.28)]"
+          style={{ padding: '0 56px 0 66px' }}
+          className="relative inline-flex min-h-[64px] items-center justify-center rounded-[4px] border border-accent-soft
+                     bg-accent-glow font-display font-extrabold text-[14px] text-center text-void
+                     tracking-[10px] uppercase cursor-pointer glow-pulse shadow-[0_14px_40px_rgb(var(--accent-rgb)/0.28)]"
         >
           CONNECT
         </motion.button>

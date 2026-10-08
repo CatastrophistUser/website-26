@@ -31,9 +31,8 @@ function AnimatedNumber({ target, suffix = '', color }) {
 }
 
 const stats = [
-  { value: 8, suffix: '+', label: 'Years', color: '#F5F0E8' },
-  { value: 47, suffix: '', label: 'Projects', color: '#FF6B35' },
-  { value: 12, suffix: '', label: 'Awards', color: '#C4F82A' },
+  { value: 2, suffix: '+', label: 'Years', color: '#F5F0E8' },
+  { value: 20, suffix: '+', label: 'Projects', color: 'var(--color-accent-glow)' },
 ];
 
 export default function About() {
@@ -69,7 +68,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="font-display font-bold text-[40px] text-primary leading-[1.15] tracking-[-1px]"
           >
-            "Placeholder quote box"
+            "All things tech."
           </motion.blockquote>
 
           <motion.p
@@ -79,9 +78,10 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-body text-[16px] text-secondary leading-[1.7] max-w-[520px]"
           >
-            With over 8 years of experience shaping digital products, I operate at the
-            intersection of visual brutalism and functional elegance. My work has been
-            recognized by Awwwards, CSSDA, and FWA — but the real metric is impact.
+            With over 2 years of experience building web apps, mobile apps, and the
+            designs behind them, I work across the full stack — tackling auth,
+            microservices, databases, and IoT along the way. Design is where it starts;
+            shipping systems that hold up is where it counts.
           </motion.p>
         </div>
 
