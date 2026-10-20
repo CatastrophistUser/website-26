@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Works from './components/Works';
-import About from './components/About';
+import Blogs from './components/Blogs';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
@@ -54,7 +54,7 @@ export default function App() {
         <Hero />
         <Skills />
         <Works />
-        <About />
+        <Blogs />
         <CTA onContactClick={() => openContact('cta')} />
       </main>
       <Footer />

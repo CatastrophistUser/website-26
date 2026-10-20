@@ -190,6 +190,34 @@ body,
   }
 }
 
+/* Blogs carousel: horizontal scroll-snap track with the scrollbar hidden
+   (prev/next buttons and touch swipe drive it). Cards show ~3 at desktop,
+   ~1.15 on mobile so the next card peeks in. */
+.blog-track {
+  scrollbar-width: none;
+  scroll-padding-inline: 0;
+}
+
+.blog-track::-webkit-scrollbar {
+  display: none;
+}
+
+.blog-card {
+  width: 85%;
+}
+
+@media (min-width: 768px) {
+  .blog-card {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-card {
+    width: calc((100% - 48px) / 3);
+  }
+}
+
 /* ============================================
    SCROLLBAR
    ============================================ */

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const navLinks = ['Skills', 'Works', 'About'];
+const navLinks = ['Skills', 'Works', 'Blogs'];
 
 export default function Navbar({ onContactClick }) {
   return (
